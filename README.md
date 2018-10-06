@@ -39,7 +39,7 @@ don't we?) a property `texts` (Kotlin) or `setTexts/getTexts` (Java) is availabl
 
 ### Java
 
-```
+```java
         final String[] sampleTexts = getResources().getStringArray(R.array.example_strings);
 
         // Notice the `Arrays.asList` since `texts` is a List<String> but Resources.getStringArray
