@@ -19,10 +19,10 @@ Use the `com.alexfacciorusso.shorteningtextview.ShorteningTextView` view into yo
         ... />
 ```
 
-where `exampe_strings` is an array of strings defined as a resource.
+where `@array/exampe_strings` is an array of strings defined as a resource.
 
 If you want to set the texts in a programmatic way (we all love setting views programmatically,
-don't we?) a property `texts` (Kotlin) or `setTexts/getTexts` (Java) is available!
+don't we?), a property `texts` (Kotlin) or `setTexts/getTexts` (Java) is available!
 
 ### Kotlin
 

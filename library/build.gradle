@@ -1,6 +1,33 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+
+ext {
+    bintrayRepo = 'ShorteningTextView'
+    bintrayName = 'com.alexfacciorusso.shorteningtextview'
+
+    publishedGroupId = 'com.alexfacciorusso.shorteningtextview'
+    libraryName = 'ShorteningTextView'
+    artifact = 'shorteningtextview'
+
+    libraryDescription = "A TextView that shows the right text based on its size!"
+
+    siteUrl = 'https://github.com/alexfacciorusso/ShorteningTextView'
+    gitUrl = 'https://github.com/alexfacciorusso/ShorteningTextView.git'
+
+    developerId = 'alexfacciorusso'
+    developerName = 'Alex Facciorusso'
+    developerEmail = 'alexfacciorusso93@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    libraryVersion = '0.1.0'
+}
 
 android {
     compileSdkVersion 28
@@ -9,7 +36,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName libraryVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -36,11 +63,19 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }
 
-dokka {
-    outputFormat = 'html'
-    outputDirectory = "$buildDir/javadoc"
-}
-
 repositories {
     mavenCentral()
 }
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/javadoc"
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
