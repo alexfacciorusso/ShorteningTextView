@@ -4,14 +4,52 @@ A TextView that shows the right text based on its size!
 
 ## Installation
 
-Add one of the following lines depending to your Gradle Android plugin version in your
-`dependencies` section:
+Add the following line in the `dependencies` section of your `build.gradle`:
 
     implementation 'com.alexfacciorusso.shorteningtextview:shorteningtextview:0.1.0'
 
 ## Usage
 
-TODO
+Use the `com.alexfacciorusso.shorteningtextview.ShorteningTextView` view into your layouts.
+
+```
+    <com.alexfacciorusso.shorteningtextview.ShorteningTextView
+        android:id="@+id/shorteningTextView"
+        app:stv_texts="@array/example_strings" 
+        ... />
+```
+
+where `exampe_strings` is an array of strings defined as a resource.
+
+If you want to set the texts in a programmatic way (we all love setting views programmatically,
+don't we?) a property `texts` (Kotlin) or `setTexts/getTexts` (Java) is available!
+
+### Kotlin
+
+```kotlin
+        val sampleStrings = resources.getStringArray(R.array.example_strings)
+
+        // Notice the `.toList()` since `texts` is a List<String> but Resources.getStringArray
+        // returns, of course, an array.
+        shorteningTextView.texts = sampleStrings.toList()
+        
+        // Or also:
+        shorteningTextView.texts = listOf("My very long string", "My string")
+```
+
+### Java
+
+```
+        final String[] sampleTexts = getResources().getStringArray(R.array.example_strings);
+
+        // Notice the `Arrays.asList` since `texts` is a List<String> but Resources.getStringArray
+        // returns, of course, an array.
+        shorteningTextView.setTexts(Arrays.asList(sampleTexts));
+```
+
+## Sample
+
+![](docs/screen.gif)
 
 ## License
 

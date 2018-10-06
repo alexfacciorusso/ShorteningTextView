@@ -1,3 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ShorteningTextView</string>
+    <string-array name="example_strings" tools:ignore="Typos">
+        <item>Very very very very very very very very very very very very very long text.</item>
+        <item>Very very very very very very very long text.</item>
+        <item>Very very very long text.</item>
+        <item>Not long text.</item>
+        <item>Text.</item>
+    </string-array>
 </resources>

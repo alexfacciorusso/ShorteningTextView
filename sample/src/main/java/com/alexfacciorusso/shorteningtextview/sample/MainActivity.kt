@@ -12,17 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val texts = listOf(
-                "Very very very very very very very very very very very very very long text.",
-                "Very very very very very very very long text.",
-                "Very very very long text.",
-                "Not long text.",
-                "Text.")
+        // Let's set our ShorteningTextView programmatically:
 
-        shorteningTextView.texts = texts
-        shorteningTextView2.texts = texts
-        shorteningTextView3.texts = texts
-        dynamicShorteningTextView.texts = texts
+        val sampleTexts = resources.getStringArray(R.array.example_strings)
+
+        // Notice the `.toList()` since `texts` is a List<String> but Resources.getStringArray
+        // returns, of course, an array.
+        shorteningProgrammaticTextView.texts = sampleTexts.toList()
 
         smallerButton.setOnClickListener {
             dynamicShorteningTextView.layoutParams =
