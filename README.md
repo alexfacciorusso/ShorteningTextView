@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/alexfacciorusso/ShorteningTextView/com.alexfacciorusso.shorteningtextview/images/download.svg) ](https://bintray.com/alexfacciorusso/ShorteningTextView/com.alexfacciorusso.shorteningtextview/_latestVersion)
+
 # ShorteningTextView
 
 A TextView that shows the right text based on its size!
