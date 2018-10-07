@@ -1,4 +1,5 @@
 [ ![Download](https://api.bintray.com/packages/alexfacciorusso/ShorteningTextView/com.alexfacciorusso.shorteningtextview/images/download.svg) ](https://bintray.com/alexfacciorusso/ShorteningTextView/com.alexfacciorusso.shorteningtextview/_latestVersion)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-ShorteningTextView-green.svg?style=flat )]( https://android-arsenal.com/details/1/7184 )
 
 # ShorteningTextView
 
@@ -6,7 +7,16 @@ A TextView that shows the right text based on its size!
 
 ## Installation
 
-Add the following line in the `dependencies` section of your `build.gradle`:
+Add the following repository in your `build.gradle` file (*Note:* this is temporary since this 
+library will soon be added to the main jcenter repository):
+
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/alexfacciorusso/ShorteningTextView" 
+        }
+    }
+    
+And the following line in the `dependencies` section:
 
     implementation 'com.alexfacciorusso.shorteningtextview:shorteningtextview:0.1.0'
 
