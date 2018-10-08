@@ -7,16 +7,7 @@ A TextView that shows the right text based on its size!
 
 ## Installation
 
-Add the following repository in your `build.gradle` file (*Note:* this is temporary since this 
-library will soon be added to the main jcenter repository):
-
-    repositories {
-        maven {
-            url  "https://dl.bintray.com/alexfacciorusso/ShorteningTextView" 
-        }
-    }
-    
-And the following line in the `dependencies` section:
+Add the following line in the `dependencies` section of your `build.gradle` file:
 
     implementation 'com.alexfacciorusso.shorteningtextview:shorteningtextview:0.1.0'
 
